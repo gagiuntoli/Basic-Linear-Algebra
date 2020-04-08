@@ -1,5 +1,9 @@
-# Benchmarks with CBLAS Library
+# Basic-Linear-Algebra
 
-# Intel(R) Core(TM) i5-9300H CPU
+This library is intended to implement the BLAS library taking
+different approaches including the most naive ones to compare.
 
-  Peak Performance : 4.33 GFLOPs/Core
+
+# Tests
+
+Intel(R) Core(TM) i5-9300H CPU Peak Performance : 4.33 GFLOPs/Core
