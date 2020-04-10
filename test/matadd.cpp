@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 
 	    long n2 = n * n;
 
-	    long double FPOperations = n2 * (2 * n - 1);
+	    long double FPOperations = n2;
 
 	    // Fill A and B with random numbers
 	    for(uint i = 0; i < n; i++){
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 	    auto start = high_resolution_clock::now();
 
 	    // Calculate A*B=C
-	    gemm(A, B, C, n);
+	    matadd(A, B, C, n);
 
 	    auto finish = high_resolution_clock::now();
 	    auto elapsed = duration_cast<nanoseconds>(finish - start);
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
 	    start = high_resolution_clock::now();
 
 	    // Calculate A*B=C
-	    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, n, n, n, 1.0, A, n, B, n, 0.0, C, n);
+	    //cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, n, n, n, 1.0, A, n, B, n, 0.0, C, n);
 
 	    finish = high_resolution_clock::now();
 

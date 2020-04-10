@@ -14,4 +14,15 @@ void gemm(const T *A, const T *B, T *C, unsigned int n)
 	}
 }
 
+template<typename T>
+void matadd(const T *A, const T *B, T *C, unsigned int n)
+{
+	for (unsigned i = 0; i < n; i++) {
+		for (unsigned j = 0; j < n; j++) {
+			C[i * n + j] = A[i * n + j] * B[i * n + j];
+		}
+	}
+}
+
 template void gemm<double>(const double *A, const double *B, double *C, unsigned int n);
+template void matadd<double>(const double *A, const double *B, double *C, unsigned int n);
